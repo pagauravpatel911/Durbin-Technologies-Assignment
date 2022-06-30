@@ -1,0 +1,103 @@
+  
+
+  ## Task for Backend Developer
+
+
+## Develop a simple backend api through which an user can perform the following operations
+
+
+
+#  Upload single / multiple documents (PDF/DOCX)
+  
+  In this api we craete a miltiple ressume 
+
+# ressume response :->{
+    "statu": true,
+    "message": "ressume you want",
+    "data": [
+        {
+            "_id": "62bd922dbb5facfe1e0913b5",
+            "title": "Mrs",
+            "name": "Gaurav Patel",
+            "phone": "7774963396",
+            "email": "pgauravpatel911@gmail.com",
+            "address": "Gujrat",
+            "education": "BE MECHANICAL",
+            "skills": [
+                "HTML",
+                "CSS",
+                "JAVASCRIPT",
+                "MONGODB",
+                "NODEJS"
+            ],
+            "experience": [
+                {
+                    "company": "Dedicated logistics partners - Binghamton, NY",
+                    "position": "Delivery Driver",
+                    "timeline": "November 2019 to Present"
+                },
+                {
+                    "company": "Americas Business Express - Johnson City, NY",
+                    "position": "Driver/Warehouse",
+                    "timeline": "September 2018 to January 2019"
+                }
+            ],
+            "createdAt": "2022-06-30T12:08:13.390Z",
+            "updatedAt": "2022-06-30T12:08:13.390Z",
+            "__v": 0
+        }
+    ]
+}
+
+  
+  #  Parse the resume fields as mentioned below
+  #      Name, Phone No, Email ID, Address
+   #     Work Experience
+   #     Education
+   #     Certifications
+   #    Skills
+
+ # In this Api we can parse and filter out thye all ressme as per our requirement
+
+ # request :-> {
+  #      "name": "Vaibhav Patel",
+   #   "education" : "B PharmL",
+ #    "skills" :"HTML"
+   # } 
+
+  # in our data base the documnet match all three feild it shoulb be return
+
+
+ # respose :->
+      
+                            "status": true,
+                                "message": "ressume you want",
+                                "data": [
+                                    {
+                                        "_id": "62bd98c75693096630d730ce",
+                                        "title": "Mrs",
+                                        "name": "Vaibhav Patel",
+                                        "phone": "9922295271",
+                                        "email": "vaibhav@gmail.com",
+                                        "address": "Gujrat",
+                                        "education": "B PharmL",
+                                        "skills": [
+                                            "HTML",
+                                            "CSS",
+                                            "JAVASCRIPT",
+                                            "MONGODB",
+                                            "NODEJS"
+                                        ],
+                                        "experience": [
+                                            "No Exprience till Now"
+                                        ],
+                                        "createdAt": "2022-06-30T12:36:23.375Z",
+                                        "updatedAt": "2022-06-30T12:36:23.375Z",
+                                        "__v": 0
+                                    }
+                                ]
+                            }
+ 
+
+   
+
