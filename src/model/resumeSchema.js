@@ -46,6 +46,11 @@ const resumeSchema = new mongoose.Schema({
     experience:{
         type:[Object]
     },
+    experienceYear:{
+        type:Number,
+        require:true 
+
+    }
     
 
     

@@ -13,7 +13,7 @@ const createResume = async function(req,res) {
             return res.status(400).send({ status: false, msg: "Invalid parameters"});
         }
 
-        let {title,name,phone,email,address,education,skills,experience} = body;
+        let {title,name,phone,email,address,education,skills,experience,experienceYear} = body;
 
         //Validate body
         if (!validator.isValidBody(body)) {
@@ -104,7 +104,8 @@ const createResume = async function(req,res) {
             address:address,
             education:education,
             skills:skills,
-            experience:experience
+            experience:experience,
+            experienceYear:experienceYear
         } 
         // Finally the registration of resume is successful
         const resumeData = await resumeModel.create(data)
@@ -163,6 +164,13 @@ const getParseResume = async function (req, res) {
                 return res.status(400).send({status: false, message:"plz enter a valid Skills"})
             }
             data["skills"] = skills
+        }
+        let experienceYear = req.body.experienceYear
+        if (experienceYear) {
+            if (!validator.isValid(experienceYear)) {
+                return res.status(400).send({status: false, message:"plz enter a Year"})
+            }
+            data["experienceYear"] = {$gte:experienceYear}
         }
 
         let filerResume = await resumeModel.find(data)
